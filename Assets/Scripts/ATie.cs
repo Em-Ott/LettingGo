@@ -10,7 +10,10 @@ public abstract class ATie : MonoBehaviour
 
     public virtual void TieClicked()
     {
+    }
 
+    public virtual void FormTie()
+    {
     }
 
     protected virtual void OnDestroy()

@@ -23,6 +23,20 @@ public class PlayerInteract : MonoBehaviour
         _interactAction.performed += HandleInteract;
     }
 
+    public void HandleKindleTie()
+    {
+        Collider2D[] objectsNearby = Physics2D.OverlapBoxAll(this.gameObject.transform.position, _interactRange, 0f);
+        foreach (Collider2D coll in objectsNearby)
+        {
+            if (coll.tag == "Wizard")
+            {
+                // To do make Wizard Class
+                Debug.Log("Wizard found");
+                coll.GetComponent<WizardTieHolder>().FormTie();
+            }
+        }
+    }
+
     void HandleInteract(InputAction.CallbackContext lookInformation)
     {
         if (_inDialogue) { return; }

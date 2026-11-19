@@ -28,7 +28,7 @@ public class PlayerClick : MonoBehaviour
         ATie tie = t.GetComponentInParent<ATie>();
         if (!tJoint) { return; }
         if (tie) { tie.TieClicked(); }
-        Destroy(t.gameObject);
-        Destroy(tJoint);
+        t.gameObject.SetActive(false);
+        tJoint.enabled = false;
     }
 }

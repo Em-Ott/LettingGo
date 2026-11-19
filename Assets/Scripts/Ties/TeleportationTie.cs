@@ -15,6 +15,13 @@ public class TeleportationTie : ATie
         PlayerTies.Instance.TeleportationTieCausingAggro = false;
     }
 
+    public override void FormTie()
+    {
+        _teleportEnabled = true;
+        _destinationTie.SetTeleportEnabled(true);
+        PlayerTies.Instance.TeleportationTieCausingAggro = true;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("On trigger enter " + other.gameObject.tag);

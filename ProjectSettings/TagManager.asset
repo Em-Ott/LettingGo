@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tie
   - Water
+  - Wizard
   layers:
   - Default
   - TransparentFX
