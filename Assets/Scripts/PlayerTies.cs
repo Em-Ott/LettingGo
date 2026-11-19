@@ -5,6 +5,7 @@ public class PlayerTies : MonoBehaviour
     [SerializeField]
     private PlayerMovement _playerMove;
     // To do: Change to use action callbacks
+    public bool TeleportationTieCausingAggro = true;
     public static PlayerTies Instance { get; private set; }
     private void Awake()
     {
