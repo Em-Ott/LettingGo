@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: 01Teleporter
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   _concurrentDialogue:
-  - hi
-  - im tired
-  - and sick
+  - "Hey, get away. I\u2019m trying to focus."
   _characterName: Teleportation Friend
   _nextDialogue: {fileID: 0}
   _choices: {fileID: 0}

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: 01BTeleporter
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "Didn\u2019t you hear me? Shoo! Shoo!"
+  - "Seriously you\u2019re such a stubborn\u2013 "
+  - Wait.
+  - "You\u2019re not a bird."
+  - "No, that\u2019s not right, I mean how did you become a bird?! How did this happen
+    to you?! "
+  - "That\u2026 you can\u2019t communicate right now can you? "
+  - 'Whatever, just tell me later. Once this is fixed.  '
+  - 'You are planning on fixing it right? '
+  - 'In the meantime feel free to use my portals.  '
+  - Just be a bit careful, I accidentally upset some of those spirits.
+  - Don't look at me like that! It really was an accident
+  - There was just a minor landslide and a few of them got hurt...
+  - And the land slide was partially my fault...
+  - "Anyway you know the gist, once you leave here you\u2026 should probably pretend
+    like you don\u2019t know me."
+  - I'll see you around.
+  - Press 'C' when near a friend to form a tie.
+  _characterName: Teleportation Fren
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}
