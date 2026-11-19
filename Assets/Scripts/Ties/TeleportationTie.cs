@@ -36,7 +36,7 @@ public class TeleportationTie : ATie
     public async Task SetTeleportOnCooldown()
     {
         _teleportOnCooldown = true;
-        await Awaitable.WaitForSecondsAsync(0.1f);
+        await Awaitable.WaitForSecondsAsync(0.5f);
         _teleportOnCooldown = false;
     }
 }
