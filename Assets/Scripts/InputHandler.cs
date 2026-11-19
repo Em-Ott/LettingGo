@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputHandler : MonoBehaviour
 {
@@ -11,19 +12,27 @@ public class InputHandler : MonoBehaviour
     private PlayerClick _playerClick;
     private InputAction _movementAction;
     private InputAction _playerClickAction;
+    private InputAction _playerRestartAction;
     void Awake()
     {
         _movementAction = InputSystem.actions.FindAction("Move");
         _playerClickAction = InputSystem.actions.FindAction("Attack");
+        _playerRestartAction = InputSystem.actions.FindAction("Restart");
         _movementAction.performed += HandleMovement;
         _playerClickAction.performed += HandleClick;
         _movementAction.canceled += CancelMovement;
+        _playerRestartAction.performed += HandleRestart;
     }
 
     private void HandleClick(InputAction.CallbackContext clickInformation)
     {
         if (!_playerClick) { return; }
         _playerClick.ClickMade(Pointer.current.position.ReadValue());
+    }
+
+    private void HandleRestart(InputAction.CallbackContext restartInformation)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void HandleMovement(InputAction.CallbackContext movementInformation)
@@ -33,7 +42,6 @@ public class InputHandler : MonoBehaviour
             Vector2 movementVector = movementInformation.ReadValue<Vector2>();
             float xMovement = movementVector.x;
             float yMovement = movementVector.y;
-            //float yMovement = 0;
 
             _playerMove.UpdateMovement(xMovement, yMovement);
         }

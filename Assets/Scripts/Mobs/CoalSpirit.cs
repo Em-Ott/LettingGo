@@ -47,7 +47,6 @@ public class CoalSpirit : MonoBehaviour
         {
             if (hit.tag == "Player")
             {
-                Debug.Log("Found player");
                 _enemyInRange = hit.transform;
             }
         }
@@ -63,6 +62,7 @@ public class CoalSpirit : MonoBehaviour
         Debug.Log("On trigger enter " + other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
+            other.gameObject.GetComponent<PlayerStatus>().DealDamage(5);
         }
     }
 
