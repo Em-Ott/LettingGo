@@ -24,11 +24,8 @@ public class PlayerClick : MonoBehaviour
 
     private void TieClicked(Transform t)
     {
-        DistanceJoint2D tJoint = t.GetComponentInParent<DistanceJoint2D>();
         ATie tie = t.GetComponentInParent<ATie>();
-        if (!tJoint) { return; }
-        if (tie) { tie.TieClicked(); }
-        t.gameObject.SetActive(false);
-        tJoint.enabled = false;
+        Debug.Log(tie);
+        if (tie) { tie.TieClicked(t); }
     }
 }

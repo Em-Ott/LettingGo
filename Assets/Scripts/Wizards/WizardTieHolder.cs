@@ -8,13 +8,27 @@ public class WizardTieHolder : ATie
     private List<ATie> _wizardTies;
     [SerializeField]
     private Transform _tieTransform;
+    [SerializeField]
+    private bool _startWithTie;
 
-    public override void TieClicked()
+    protected override void Start()
     {
+        if (!_startWithTie)
+        {
+            TieClicked(_tieTransform);
+        }
+    }
+
+    public override void TieClicked(Transform t)
+    {
+        DistanceJoint2D tJoint = t.GetComponentInParent<DistanceJoint2D>();
         foreach (ATie tie in _wizardTies)
         {
-            tie.TieClicked();
+            tie.TieClicked(t);
         }
+        t.gameObject.SetActive(false);
+        if (!tJoint) { return; }
+        tJoint.enabled = false;
     }
 
     public override void FormTie()

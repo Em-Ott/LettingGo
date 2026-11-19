@@ -8,7 +8,7 @@ public class TeleportationTie : ATie
     private bool _teleportOnCooldown = false;
     private bool _teleportEnabled = true;
 
-    public override void TieClicked()
+    public override void TieClicked(Transform t)
     {
         _teleportEnabled = false;
         _destinationTie.SetTeleportEnabled(false);

@@ -8,7 +8,7 @@ public abstract class ATie : MonoBehaviour
     {
     }
 
-    public virtual void TieClicked()
+    public virtual void TieClicked(Transform t)
     {
     }
 
