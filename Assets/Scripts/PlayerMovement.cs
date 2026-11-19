@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveInput;
     private Rigidbody2D _rb;
     private bool _inWater;
+    private bool _moveAllowed = true;
 
     // Grab components in Awake incase other scripts end up relying on us having assigned variables in Start
     void Awake()
@@ -39,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AllowMove(bool allow)
+    {
+        _moveAllowed = allow;
+    }
+
     public void ChangeLocation(Vector3 newLocation)
     {
         this.gameObject.transform.position = newLocation;
@@ -58,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateMovement(float newXMove, float newYMove)
     {
+        if (!_moveAllowed) { return; }
         if (_inWater) { newYMove = 0; }
 
         _moveInput = new Vector2(newXMove, newYMove).normalized;
